@@ -1,0 +1,255 @@
+/*--------font colors-----------*/
+		$main-font: #000000; 
+		$main-link: #895566; //brighter red
+		$main-link-hover: #438EAF; //blue
+		$highlight-background: #9AB286; //green
+		$highlight: #ffffff;  //white
+		$menu-text: #E8E7E7; //light grey white  
+		$menulink: #E8E7E7;  
+		$menuhover: #C2C8C6;
+		
+		
+		/*Background colors*/
+		$background: #E8E7E7;
+		$container: #ffffff;
+		$main: #ffffff; 
+		$top: #EFEBEC;
+		$menuback: #1C1115; 
+		$menuhoverback: #4A343C; 
+		$tablecolor: #1C1115; 
+		$footer: #ffffff;
+		
+		/*Images*/
+		$backgroundImg: "images/back1.png";
+		$headerImg: "images/header.jpg"; 	
+
+/* ----functions----------------*/
+	@mixin round-edges($val) {
+		border-radius: $val;
+		-webkit-border-radius: $val;
+		-moz-border-radius: $val;
+		-webkit-border-radius: $val;
+	}
+
+/*----------------------------------*/
+	
+		
+        body {
+            font-size: 13px;
+            height:100%;
+            line-height: 125%;
+            padding: 0;
+            margin: 0;
+            font-family: 'Times New Roman';
+			
+			color: $main-font;
+            background-color: $background;
+            background-image: url($backgroundImg);
+			background-repeat: repeat;
+			background-size: 300px 300px;
+        }
+       i {
+           font-size: 15px;
+       }
+        a:link {text-decoration: none; color: $main-link;
+        } /* unvisited link */
+		a {text-decoration: none; color: $main-link;}
+        a:visited {text-decoration: none; color: $main-link;
+        } /* visited link */
+        a:hover {text-decoration: none; color: $main-link-hover;
+        }   /* mouse over link */
+        a:active {text-decoration: none; color: $main-link;
+        }  /* selected link */
+       
+        ::selection {
+            background: $highlight-background;
+            color: $highlight;
+        }
+        /* Gecko/Mozilla */
+        ::-moz-selection {
+            background: $highlight-background;
+            color: $highlight;
+        }
+		#container {
+			display: block;
+            position: absolute;
+            top: 0px;
+			left: 50px;
+			right: 50px;
+            min-width: 800px;
+            width: 80%;
+			min-height: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0 auto 0 auto;
+		}
+	/*------Header-----------------------------------------------------*/
+		#top {
+			display: block;
+            position: absolute;
+            top: 0px;
+            min-width: 100%;
+            width: 800px;
+            height: 175px;
+            padding: 0;
+            margin: 0;
+			
+            background-color: $top;
+            background-image: url($headerImg);
+			background-size: 100% 175px;
+			background-repeat: no-repeat;
+		}
+/*------Menu bar----------------------------------------------------*/
+        #menu {
+            clear: all;
+            display: block;
+            position: absolute;
+			z-index: 5;
+            top: 175px;
+            min-width: 100%;
+            width: 800px;
+            height: 30px;
+            padding: 0;
+            margin: 0;
+			
+            background-color: rgba(28,17,21,0.9);
+			color: $menu-text; 
+        }
+        .list {
+            display: block;
+            position: relative;
+            padding: 5px; 
+			margin: 3px 0 0 0;
+        }
+        .list ul {
+            list-style: none;
+            font-weight:bold;
+            margin: 0;
+            padding: 0;
+            width: 105px;
+        }
+        .list a {
+            display:block;
+            padding:5px;
+			
+			background-color: $menuback;
+			color: $menulink; 
+        }
+        .list a:hover{
+            background-color: $menuhoverback;
+            color: $menuhover;
+        }
+        .list ul li ul li {
+            word-wrap:break-word;
+            border-bottom: 1px solid white;
+            margin-left: -5px;
+        }
+        .list ul li ul {
+            display: none;
+        }
+        .list ul li:hover ul {
+            display: block;
+			margin: 6px 0 0 0;
+			
+        }
+		
+		
+        .nav {
+            display: block;
+            position: absolute;
+            top: 3px;
+            left: 120px;
+			
+        }
+        .nav ul {
+            padding:0;
+            margin: 0;
+            list-style-type:none;
+            display: block;
+        }
+        .nav ul li {
+            display:inline;  
+            font-size: 15px;
+        }
+        .nav a {
+            float: left;
+            padding:5px 10px;
+            border-right:1px solid white;
+			
+			background-color: $menuback;
+            color: $menulink;
+        }
+        .nav a:hover {
+            background-color: $menuhoverback;
+            color: $menuhover;
+        }
+        
+		.search {
+            position: absolute;  
+            margin: 3px 0 0 0;
+            padding: 0;
+            right: 20px;
+            top: 0px;
+        }
+        .searchbox_submit {
+            position: absolute;
+            right: 0px;
+        }
+/*----------all pages--------------------*/
+	table {
+		border-collapse: collapse;
+		margin: 0 0 15px 0;
+	}
+
+	table, td, th {
+		border: 1px solid $tablecolor;
+	}
+/*---------------Main posts-------------------*/
+        #main {
+            display: block;
+            position: absolute;
+            top: 205px;
+            min-width: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: $main;
+			min-height: 60%; 
+        }
+ /*--------------------------------------------*/
+        #footer {
+           position: fixed; 
+           display: block; 
+		   bottom: 0; 
+		   left: 0; 
+		   z-index: 10; 
+		   width: 100%; 
+		   height: 20px; 
+		   margin: 0;
+		   padding: 2px 50px 0 25px; 
+		   background-color: $footer; 
+        }
+ /*--Page customs -------------------------------*/
+	.student_tables {
+		display:block; 
+		margin: 25px; 
+		padding: 0; 
+	}
+	
+	.margins {
+		margin: 25px;
+	}
+	
+	.mainpage {
+		display: block; 
+		position: relative; 
+		margin: 15px; 
+		padding: 10px; 
+		width: 100px; 
+		height: 25px; 
+		
+		text-align: center;
+		font-weight: bold;
+		background-color: $menuback; 
+		color: $highlight; 
+		@include round-edges(10px);
+	}
